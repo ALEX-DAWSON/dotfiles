@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+this_folder=~/dotfiles
+
+fonts_folder=$HOME/.fonts
+
+get-fonts() {
+    if [ ! -d "$fonts_folder" ]
+    then
+        mkdir $fonts_folder
+    fi
+    if [ ! -d "$fonts_folder/MaterialDesign-Font" ]
+    then
+        cd $fonts_folder &&
+        git clone https://github.com/Templarian/MaterialDesign-Font.git &&
+        cd $this_folder
+    else
+        cd $fonts_folder/MaterialDesign-Font &&
+        git pull &&
+        cd $this_folder
+    fi
+    cp $fonts_folder/MaterialDesign-Font/MaterialDesignIconsDesktop.ttf $fonts_folder &&
+    
+    cp $this_folder/fonts/* $fonts_folder
+}
+
+update-rc() {
+    cp $this_folder/home/.* $HOME
+}
+
+update-configs() {
+    cp -r ./config/* $HOME/.config
+}
+
+case $1 in
+    fonts)
+        get-fonts
+    ;;
+    rc) 
+        update-rc
+    ;;
+    config)
+        update-configs
+    ;;
+    *)
+        echo "Pick an option:"
+        echo "1) Update current fonts"
+        echo "2) Update your RC files"
+        echo "3) Update your config files"
+        echo "4) All of the above"
+        read -p "What do you want to do? [1, 2, 3, 4]: " response
+        case $response in
+            1)
+                get-fonts
+            ;;
+            2) 
+                update-rc
+            ;;
+            3)
+                update-configs
+            ;;
+            4)
+                update-rc &&
+                update-configs &&
+                get-fonts
+            ;;
+            *)
+                return 2>/dev/null
+            ;;
+        esac
+    ;;
+esac
