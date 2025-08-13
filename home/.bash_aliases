@@ -9,6 +9,8 @@ alias bonsai='cbonsai -i -l'
 alias givexperm='chmod +x ~/Scripts/*.sh'
 alias addcow='sudo cp ~/Scripts/ascii/*.cow /usr/share/cowsay/cows'
 
+alias vim='nvim'
+alias v='nvim'
 
 #Search what distro family is being used and set appropriate varriables
 # release_file=/etc/os-release
