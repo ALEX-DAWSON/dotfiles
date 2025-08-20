@@ -42,6 +42,11 @@ case $1 in
     config)
         update-configs
     ;;
+    all)
+        update-rc &&
+        update-configs &&
+        get-fonts
+    ;;
     *)
         echo "Pick an option:"
         echo "1) Update current fonts"
