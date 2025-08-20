@@ -1,4 +1,4 @@
-wal -R
+# wal -R
 
 neofetch
 
