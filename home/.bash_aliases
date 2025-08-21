@@ -11,6 +11,7 @@ alias addcow='sudo cp ~/Scripts/ascii/*.cow /usr/share/cowsay/cows'
 
 alias vim='nvim'
 alias v='nvim'
+alias code='flatpak run com.vscodium.codium'
 
 #Search what distro family is being used and set appropriate varriables
 # release_file=/etc/os-release
