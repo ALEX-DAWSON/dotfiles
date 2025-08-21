@@ -32,7 +32,18 @@ update-configs() {
     cp -r ./config/* $HOME/.config
 }
 
+fix-pipx-pywalfox() {
+    if [ ! -d "$HOME/.local/share/pipx/venvs/pywalfox/" ]
+    then
+        pipx install pywalfox
+    fi
+    cp $this_folder/pywalfox/main.sh $HOME/.local/share/pipx/venvs/pywalfox/lib/python3.12/site-packages/pywalfox/bin/main.sh
+}
+
 case $1 in
+    pywalfox)
+        fix-pipx-pywalfox
+    ;;
     fonts)
         get-fonts
     ;;
