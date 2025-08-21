@@ -50,4 +50,4 @@ export HISTCONTROL=ignoreboth
 export PATH=$PATH:/home/alex/.spicetify
 
 # Created by `pipx` on 2025-07-27 16:41:37
-export PATH="$PATH:/home/alex/.local/bin"
+#export PATH="$PATH:/home/alex/.local/bin"
