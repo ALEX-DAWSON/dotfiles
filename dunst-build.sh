@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-colour_file = $HOME/.cache/wal/colors.sh
+colour_file = ~/.cache/wal/colors.sh
 
 if [[ -f $colour_file ]]
 then
