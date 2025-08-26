@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 colour_file="$HOME/.cache/wal/colors.sh"
+config="~/.config/dunst/dunstrc"
 
 if [[ -f $colour_file ]]
 then
@@ -24,17 +25,17 @@ then
 #            Defines the frame color for low, normal and critical notifications respectively.
 
 
-    dunst -lf  "$txt" \
-      -lb  "$bg" \
-      -lfr "$low" \
-      -nf  "$txt" \
-      -nb  "$bg" \
-      -nfr "$normal" \
-      -cf  "$txt" \
-      -cb  "$(pastel mix $bg $urgent | pastel format hex)" \
-      -cfr "$urgent" > /dev/null 2>&1
+    dunst --config $config \
+        -lf  "$txt" \
+        -lb  "$bg" \
+        -lfr "$low" \
+        -nf  "$txt" \
+        -nb  "$bg" \
+        -nfr "$normal" \
+        -cf  "$txt" \
+        -cb  "$(pastel mix $bg $urgent | pastel format hex)" \
+        -cfr "$urgent" > /dev/null 2>&1
 
-      notify-send "Notification colors updated"
     else
         echo "Oops, I think something went wrong. I can't find $color_file"
     fi
