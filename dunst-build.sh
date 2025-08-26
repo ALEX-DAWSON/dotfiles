@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-colour_file = "$HOME/.cache/wal/colors.sh"
+colour_file="$HOME/.cache/wal/colors.sh"
 
 if [[ -f $colour_file ]]
 then
     source $colour_file
     pidof dunst && killall dunst
 
-    txt = $color7
-    bg = $color0
+    txt=$color7
+    bg=$color0
 
-    low = $color4
-    normal = $color3
-    urgent = $color2
+    low=$color4
+    normal=$color3
+    urgent=$color2
 
 #        -lf/nf/cf color
 #            Defines the foreground color for low, normal and critical notifications respectively.
