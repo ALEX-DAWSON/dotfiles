@@ -34,7 +34,7 @@ then
         -nfr "$normal" \
         -cf  "$txt" \
         -cb  "$bg" \
-        -cfr "$urgent" > /dev/null 2>&1
+        -cfr "$urgent" > /dev/null 2>&1 &
 
     else
         echo "Oops, I think something went wrong. I can't find $color_file"
