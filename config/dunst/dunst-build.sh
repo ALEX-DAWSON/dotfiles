@@ -91,14 +91,14 @@ cat <<EOF > $HOME/.config/dunst/dunstrc
 
 [urgency_low]
     background = "$bg"
-    foreground = "$fg"
+    foreground = "$txt"
     frame_color = "$low"
 	highlight = "$low, $normal"
     timeout = 20
 
 [urgency_normal]
     background = "$bg"
-    foreground = "$fg"
+    foreground = "$txt"
 	frame_color = "$normal"
 	highlight = "$low, $normal"
     timeout = 20
@@ -108,7 +108,7 @@ cat <<EOF > $HOME/.config/dunst/dunstrc
 
 [urgency_critical]
     background = "$bg"
-    foreground = "$fg"
+    foreground = "$txt"
     frame_color = "$urgent"
 	highlight = "$low, $normal"
     timeout = 0
