@@ -33,7 +33,7 @@ then
         -nb  "$bg" \
         -nfr "$normal" \
         -cf  "$txt" \
-        -cb  "$(pastel mix $bg $urgent | pastel format hex)" \
+        -cb  "$bg" \
         -cfr "$urgent" > /dev/null 2>&1
 
     else
