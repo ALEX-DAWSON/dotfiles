@@ -10,7 +10,7 @@ then
     bg=$color0
 
     low=$color4
-    normal=$color3
+    normal=$color1
     urgent=$color2
 
 cat <<EOF > $HOME/.config/dunst/dunstrc
