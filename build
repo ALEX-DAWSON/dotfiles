@@ -12,15 +12,27 @@ get-fonts() {
     if [ ! -d "$fonts_folder/MaterialDesign-Font" ]
     then
         cd $fonts_folder &&
-        git clone https://github.com/Templarian/MaterialDesign-Font.git &&
+        git clone https://github.com/Templarian/MaterialDesign-Font.git --depth 1 &&
         cd $this_folder
     else
         cd $fonts_folder/MaterialDesign-Font &&
         git pull &&
         cd $this_folder
     fi
+    if [ ! -d "$fonts_folder/devicon" ]
+    then
+        cd $fonts_folder &&
+        git clone https://github.com/devicons/devicon.git --depth 1 &&
+        cd $this_folder
+    else
+        cd $fonts_folder/devicon &&
+        git pull &&
+        cd $this_folder
+    fi
     cp $fonts_folder/MaterialDesign-Font/MaterialDesignIconsDesktop.ttf $fonts_folder &&
     
+    cp $fonts_folder/devicon/fonts/devicon.ttf $fonts_folder &&
+
     cp $this_folder/fonts/* $fonts_folder
 }
 

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# bash ./dunst/dunst-build.sh
+
+config_nvim=~/.config/nvim
+color_folder=colors
+cache=~/.cache
+
+if [[ -d $config_nvim ]]
+then
+    if [[ ! -d $config_nvim/$color_folder ]]
+    then
+        mkdir $config_nvim/$color_folder
+        echo "made directory $config_nvim/$color_folder"
+    fi
+    cp $cache/wal/colors-wal.vim $config_nvim/$color_folder/wal.vim
+    echo "successfully updated $config_nvim/$color_folder/wal.vim"
+else
+    echo "oops, I think something went wrong. Check that neovim is installed correctly"
+fi
